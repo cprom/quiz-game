@@ -1,0 +1,95 @@
+body{
+  font-family: 'Roboto',
+  sans-serif;
+  margin: 0px;
+  
+
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: .5fr 1fr 1fr .5fr;
+  height: 100vh;
+  grid-template-areas:
+  "title      title       timer"
+  "questions  questions   questions"
+  "questions  questions   questions"
+  "footer     footer      footer"
+}
+
+header {
+  grid-area: title;
+  background-color: rgb(66, 66, 66);
+  color: white;
+  font-size: 25px;
+  padding: 10px;
+  margin: 0px;
+  
+  
+  
+}
+
+.timer {
+  grid-area: timer;
+  text-align: right;
+  background-color: rgb(66, 66, 66);
+  color: white;
+  font-size: 25px;
+  padding:10px;
+  
+}
+
+.questions {
+  grid-area: questions;
+  text-align: center;
+  height: 500px;
+  width:400px;
+  margin: auto;
+  box-shadow: 0px 0px 15px rgb(66, 66, 66);
+  padding: 20px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+p#questions-box {
+  border: 1px solid black;
+  padding: 30px;
+}
+
+#answers {
+  margin-top: 20px;
+  border: 1px solid black;
+  
+}
+
+#start {
+  background: rgb(61, 214, 61);
+  border-radius: 5px;
+  margin: 20px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+footer {
+grid-area: footer;
+position: fixed;
+left: 0;
+bottom: 0;
+height: 140px;
+width: 100%;
+background-color: rgb(66, 66, 66);
+color: white;
+text-align: center;
+padding-top: 15px;
+}
+
+.fab {
+  font-size: 30px;
+  padding: 5px;
+}

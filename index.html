@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/45c136388c.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./Assets/reset.css">
+  <link rel="stylesheet" href="./Assets/style.css">
+  <title>Tech Quiz</title>
+</head>
+<body>
+
+<div class="container">
+  <header>
+  Tech Quiz
+  </header>
+
+  <section class="timer" id="countdown-time">
+    Timer: 0
+  </section>
+
+  <section class="questions">
+    <form>
+      <label>
+      <p id="questions-box"></p>
+      </label>
+
+    </form>
+    <div id="answers">
+      <p class="answer" id="answerA" onclick="check('answerA')">A</p>
+      <p class="answer" id="answerB" onclick="check('answerB')">B</p>
+      <p class="answer" id="answerC" onclick="check('AnswerC')">C</p>
+      <p class="answer" id="answerD" onclick="check('AnswerD')">D</p>
+    </div>
+    
+    <button id="start">Start Quiz</button>
+  </section>
+
+
+  <footer>
+    <i class="fab fa-linkedin-in"></i>
+    <i class="fab fa-instagram"></i>
+    <i class="fab fa-git-alt"></i>
+  </footer>
+
+</div>
+
+
+
+
+  <script 
+  src="./app.js">
+  </script>
+
+</body>
+</html>
