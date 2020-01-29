@@ -1,19 +1,35 @@
 //Build array of objects for questions and answers
 
-let qAndA = {
-  question: "Name one data type in JS",
-  answerOne: "A: String",
-  answerTwo: "B: section",
-  answerThree: "C: not hotdog",
-  answerFour: "D: block",
+let qAndA = [
+  {
+    question: "Name one data type in JS",
+    a: "String",
+    b: "Sections",
+    c: "not hotdog",
+    d: "block",
+    correctAnswer: 'a'
+  },
+
+  {
+    question: "What is used to declare a variable?",
+    a: "prinf",
+    b: "let",
+    c: "<h1>",
+    d: "css",
+    CorrectAnswer: 'b'
+  },
+
+]
+
+let lastQuestion = question.length - 1
+let arrQuestion = 0;
+
+function renderQuestion() {
+  let q = question[arrQuestion]
+  question.innerHTML = "<p>" + q.question + "</p>"
+  a.innerHTML = q.a
+  b.innerHTML = q.b
+  b.innerHTML = q.c
+  b.innerHTML = q.d
 }
-
-console.log(qAndA);
-document.getElementById("questions-box").innerHTML = qAndA.question
-document.getElementById("answerOne").innerHTML = qAndA.answerOne
-document.getElementById("answerTwo").innerHTML = qAndA.answerTwo
-document.getElementById("answerThree").innerHTML = qAndA.answerThree
-document.getElementById("answerFour").innerHTML = qAndA.answerFour
-
-
 

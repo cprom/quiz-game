@@ -55,6 +55,27 @@ header {
   -o-border-radius: 10px;
 }
 
+p#questions-box {
+  border: 1px solid black;
+  padding: 30px;
+}
+
+#answers {
+  margin-top: 20px;
+  border: 1px solid black;
+  
+}
+
+#start {
+  background: rgb(61, 214, 61);
+  border-radius: 5px;
+  margin: 20px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
 footer {
 grid-area: footer;
 position: fixed;
