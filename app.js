@@ -21,7 +21,7 @@ let qAndA = [
 
 ]
 
-let lastQuestion = question.length - 1
+let lastQuestion = qAndA.length - 1
 let arrQuestion = 0;
 
 function renderQuestion() {
