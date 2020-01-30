@@ -55,7 +55,7 @@ header {
   -o-border-radius: 10px;
 }
 
-p#questions-box {
+p#question {
   border: 1px solid black;
   padding: 30px;
 }
