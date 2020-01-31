@@ -44,7 +44,7 @@ header {
   -o-border-radius: 10px;
 }
 
-p#question {
+#question {
   margin: 30px;
   border: 1px solid black;
   padding: 40px;
@@ -57,6 +57,8 @@ p#question {
 }
 
 #answers {
+  display: flex;
+  flex-direction: column;
   border-radius: 10px;
   margin: 30px;
   margin-top: 20px;
@@ -70,9 +72,10 @@ p#question {
 }
 
 .answer {
+  font-size: 18px;
+  background: rgb(163, 163, 170);
   margin-top: 5px;
   padding: 10px;
-  border: 1px solid black;
   border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
@@ -80,15 +83,31 @@ p#question {
   -o-border-radius: 10px;
 }
 
-#start {
+.answer:hover {
+  border:1px solid red;
+}
+
+#start-btn {
+  height: 60px;
+  width: 90px;
+  font-size: 20px;
   background: rgb(61, 214, 61);
   border-radius: 5px;
-  margin: 20px;
+  margin: auto;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
 }
+
+#start-btn:hover {
+  border:1px solid black;
+}
+
+.hide {
+  display: none;
+}
+
 
 footer {
   grid-area: footer;
