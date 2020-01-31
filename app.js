@@ -13,19 +13,41 @@ let qAndA = [
       { text: 'Const', correct: false },
       { text: 'data', correct: false }
     ]
-  }
+  },
+  {
+    question: 'What is used to declare a variable?',
+    answers: [
+      { text: '<h1>, <h2>, class', correct: false },
+      { text: 'let, var, const', correct: true },
+      { text: 'data, function(), id', correct: false }
+    ]
+  },
+  {
+    question: 'Name one data type in JS',
+    answers: [
+      { text: 'String', correct: true },
+      { text: 'Const', correct: false },
+      { text: 'data', correct: false }
+    ]
+  },
+  {
+    question: 'How does a for loop start?',
+    answers: [
+      { text: 'for (i = 0; i < 10; i++)', correct: true },
+      { text: 'for i = 0; i < 10; i++', correct: false },
+      { text: 'for (i = 0: i < 10: i++)', correct: false }
+    ]
+  },
 
 
 ];
 
 //add event to hide and unhide elememts when "start quiz" is pressed
-start.addEventListener('click', startQuiz);
+document.getElementById("start-btn").addEventListener('click', startQuiz);
 
 function startQuiz() {
 
-
-
-  start.classList.add('hide');
+  document.getElementById("start-btn").classList.add('hide');
   question.classList.remove('hide');
   answerA.classList.remove('hide');
   answerB.classList.remove('hide');
@@ -37,36 +59,41 @@ function startQuiz() {
 
 
 function setNextQuestion() {
+  resetAnswers()
   showQuestion(qAndA[currentQuestionIndex])
 
 }
-
+//display questions on to page
 function showQuestion(qAndA) {
   document.getElementById('question').innerText = qAndA.question;
   qAndA.answers.forEach(answer => {
     let button = document.createElement('button');
-    button.innerText = qAndA.answers.text;
+    button.innerText = answer.text;
     button.classList.add('answer');
     if (answer.correct) {
-      button.dataset.correct = answers.correct
+      button.dataset.correct = answer.correct
 
     }
     button.addEventListener('click', selectAnswer)
     document.getElementById('answers').appendChild(button)
-
+    console.log('ping')
   })
+}
+function resetAnswers() {
+  answerA.classList.add('hide')
+  answerB.classList.add('hide')
+  answerC.classList.add('hide')
+}
 
-  function selectAnswer(e) {
+function selectAnswer(e) {
+  let selectedBtn = e.target
+  let correct = selectedBtn.dataset.correct
 
-  }
 }
 
 
 
-
-function selectAnswer() {
-
-}
+//countdown timer
 
 function startTimer(i, callback) {
   callback = callback || function () { };
@@ -76,7 +103,7 @@ function startTimer(i, callback) {
   }, 1000);
 }
 document.getElementById("start-btn").addEventListener('click', function () {
-  startTimer(5, function () {
+  startTimer(100, function () {
     alert('Game Over')
   });
 });

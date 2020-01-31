@@ -72,9 +72,10 @@ header {
 }
 
 .answer {
+  font-size: 18px;
+  background: rgb(163, 163, 170);
   margin-top: 5px;
   padding: 10px;
-  border: 1px solid black;
   border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
