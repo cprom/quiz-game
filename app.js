@@ -1,46 +1,82 @@
-let start = document.getElementById("start")
-let question = document.getElementById("question")
-let answerA = document.getElementById("answerA")
-let answerB = document.getElementById("answerB")
-let answerC = document.getElementById("answerC")
-let quiz = document.getElementById("quiz")
+let start = document.getElementById("start-btn");
+let score = 0;
+let currentQuestionIndex;
+
 
 //Build array of objects for questions and answers
 
 let qAndA = [
   {
-    question: "Name one data type in JS",
-    answerA: "String",
-    answerB: "Sections",
-    answerC: "not hotdog",
-    correctAnswer: 'a'
-  },
+    question: 'Name one data type in JS',
+    answers: [
+      { text: 'String', correct: true },
+      { text: 'Const', correct: false },
+      { text: 'data', correct: false }
+    ]
+  }
 
-  {
-    question: "What is used to declare a variable?",
-    answerA: "prinf",
-    answerB: "let",
-    answerC: "<h1>",
-    correctAnswer: 'b'
-  },
 
-]
+];
 
-let lastQuestion = qAndA.length - 1
-let nextQuestion = 0;
+//add event to hide and unhide elememts when "start quiz" is pressed
+start.addEventListener('click', startQuiz);
 
-function renderQuestion() {
-  let q = qAndA[nextQuestion]
-  question.innerHTML = "<p>" + q.question + "</p>"
-  answerA.innerHTML = q.answerA
-  answerB.innerHTML = q.answerB
-  answerC.innerHTML = q.answerC
-  nextQuestion = 0
-  nextQuestion++
+function startQuiz() {
 
+
+
+  start.classList.add('hide');
+  question.classList.remove('hide');
+  answerA.classList.remove('hide');
+  answerB.classList.remove('hide');
+  answerC.classList.remove('hide');
+  currentQuestionIndex = 0;
+  setNextQuestion()
+  startTimer()
+}
+
+
+function setNextQuestion() {
+  showQuestion(qAndA[currentQuestionIndex])
 
 }
 
-start.style.display = "none"
-renderQuestion()
-quiz.style.display = "block"
+function showQuestion(qAndA) {
+  document.getElementById('question').innerText = qAndA.question;
+  qAndA.answers.forEach(answer => {
+    let button = document.createElement('button');
+    button.innerText = qAndA.answers.text;
+    button.classList.add('answer');
+    if (answer.correct) {
+      button.dataset.correct = answers.correct
+
+    }
+    button.addEventListener('click', selectAnswer)
+    document.getElementById('answers').appendChild(button)
+
+  })
+
+  function selectAnswer(e) {
+
+  }
+}
+
+
+
+
+function selectAnswer() {
+
+}
+
+function startTimer(i, callback) {
+  callback = callback || function () { };
+  var int = setInterval(function () {
+    document.getElementById("countdown-time").innerHTML = "Time Left: " + i;
+    i-- || (clearInterval(int), callback());
+  }, 1000);
+}
+document.getElementById("start-btn").addEventListener('click', function () {
+  startTimer(5, function () {
+    alert('Game Over')
+  });
+});
